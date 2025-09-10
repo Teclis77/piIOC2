@@ -1,0 +1,62 @@
+#################################################
+# ###                                       ### #
+# ### StreamDevice Protocol for             ### #
+# ### PI - Pollux                           ### #
+# ###                                       ### #
+# ### author: D. Hampai - M. Montis         ### #
+# ###                                       ### #
+# ### Ref 1.0; 2025-08-27		    ### #
+#################################################
+
+###################
+# ### Globals ### #
+###################
+
+#Terminator = CR LF;
+Terminator = LF;
+#Terminator=CR;
+ReplyTimeout=1000;
+ReadTimeout=1000;
+#
+#       Protocols
+#
+##
+#       Discard Extra Inputs
+#	IF NECESSARY
+##
+#ExtraInput = Ignore;
+getModel {
+	out "\$1 nversion";
+	in "%s %s %s";
+}
+getError {
+	out "\$1 gne";
+	in "%d";
+}
+getMoving {
+        out "\$1 nst";
+        in "%d %d %d=%b";
+}
+getStatus {
+	out "\$1 getaxis";
+	in "%b";
+}
+setStatus {
+        out "%b \$1 setaxis";
+}
+getPos {
+	out "\$1 np";
+	in "%f";
+}
+setMovAbs {
+	out "%f \$1 nm";
+}
+setMovRel {
+        out "%f \$1 nr";
+}
+setInit {
+	out "\$1 \$2";
+}
+#setHoming {
+#        out "\$1 GOH \$2";
+#}
