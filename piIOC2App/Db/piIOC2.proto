@@ -27,26 +27,27 @@ ReadTimeout=1000;
 #ExtraInput = Ignore;
 getModel {
 	out "\$1 nversion";
-	in "%s %s %s";
+	in "%s %s %s \r";
 }
 getError {
 	out "\$1 gne";
-	in "%d";
+	in "%d \r";
 }
 getMoving {
         out "\$1 nst";
-        in "%d %d %d=%b";
+        in "%b \r";
+#        in "%d %d %d=%b";
 }
 getStatus {
 	out "\$1 getaxis";
-	in "%b";
+	in "%b \r";
 }
 setStatus {
         out "%b \$1 setaxis";
 }
 getPos {
 	out "\$1 np";
-	in "%f";
+	in "%f \r";
 }
 setMovAbs {
 	out "%f \$1 nm";

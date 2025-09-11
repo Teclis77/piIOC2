@@ -36,7 +36,7 @@ record(ai, "$(MOT):pos_$(card)_$(axis)") {
         field(SCAN, "Passive")
         field(DTYP, "stream")
         field(INP, "@piIOC2.proto getPos($(axis)) $(ASYNPORT)")
-	field(PREC, "3")
+#	field(PREC, "3")
         field(PINI, "NO")
 }
 record(seq, "$(MOT):evalpos_$(card)_$(axis)") {
