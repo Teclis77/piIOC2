@@ -31,16 +31,18 @@ getModel {
 }
 getError {
 	out "\$1 gne";
-	in "%d \r";
+	in "%s \r";
 }
 getMoving {
         out "\$1 nst";
-        in "%b \r";
+#        in "%b \r";
+        in "%s \r";
 #        in "%d %d %d=%b";
 }
 getStatus {
 	out "\$1 getaxis";
-	in "%b \r";
+#        in "%b \r";
+	in "%s \r";
 }
 setStatus {
         out "%b \$1 setaxis";
