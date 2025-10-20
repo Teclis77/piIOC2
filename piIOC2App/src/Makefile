@@ -40,6 +40,13 @@ piIOC2_SRCS_vxWorks += -nil-
 # Add support from base/src/vxWorks if needed
 #piIOC2_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
+ifdef EPICS_QSRV_MAJOR_VERSION
+    piIOC2_LIBS += qsrv
+    piIOC2_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
+    piIOC2_DBD += PVAServerRegister.dbd
+    piIOC2_DBD += qsrv.dbd
+endif
+
 # Finally link to the EPICS Base libraries
 piIOC2_LIBS += $(EPICS_BASE_IOC_LIBS)
 
