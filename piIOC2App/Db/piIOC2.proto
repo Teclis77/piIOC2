@@ -57,7 +57,8 @@ setMovAbs {
 setMovRel {
         out "%f \$1 nr";
 }
-setInit {
+#setInit {
+setHome {
 	out "\$1 \$2";
 }
 #setHoming {
